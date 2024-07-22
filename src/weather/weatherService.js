@@ -1,7 +1,7 @@
-const axios = require('axios');
-const {GEO_DB_URL, GEO_DB_OPTIONS, WEATHER_API_URL} = require('../utils/api');
+import axios from 'axios';
+import { GEO_DB_URL, GEO_DB_OPTIONS, WEATHER_API_URL } from '../utils/constants.js';
 
-const fetchWeatherApiData = async (city) => {
+export const fetchWeatherApiData = async (city) => {
     try {
         const { latitude, longitude } = await fetchCityCoordinates(city);
         const response = await axios.get(`${WEATHER_API_URL}&lat=${latitude}&lon=${longitude}&units=metric`);
@@ -28,5 +28,3 @@ const fetchCityCoordinates = async (city) => {
         throw error;
     }
 };
-
-module.exports = fetchWeatherApiData
