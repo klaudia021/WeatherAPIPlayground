@@ -7,7 +7,6 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 const weatherServiceInstance = new WeatherService();
 const weatherController = new WeatherController(app, weatherServiceInstance);
-console.log('weatherController');
 
 app.use(express.static('public'));
 
