@@ -4,20 +4,26 @@ body {
     align-items: center;
     justify-content: center; 
     margin: 0; 
-    background-color: #e0e0e0;;
+    background-color: #fad0c4;
 }
 .search-container {
-    border: 1px solid #ccc;
-    padding: 30px;
+    border: 5px solid #322927;
+    padding: 40px;
     margin: 100px 20px;
+    color: #322927;
 }
-
 
 .button-container {
     margin-top: 10px;
 }
 
 #city-name {
-    font-size: 20px;
+    font-size: 30px;
     font-weight: bold;
+    color: #322927;
+}
+
+#data-container {
+    font-size: 20px;
+    color: #322927;
 }
