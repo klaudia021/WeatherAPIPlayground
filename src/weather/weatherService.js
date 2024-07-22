@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { GEO_DB_URL, GEO_DB_OPTIONS, WEATHER_API_URL } from '../utils/constants.js';
 
-export class weatherService {
+export class WeatherService {
     async fetchWeatherApiData(city) {
         try {
             const { latitude, longitude } = await this.fetchCityCoordinates(city);
