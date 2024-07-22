@@ -2,11 +2,11 @@ import axios from 'axios';
 import { GEO_DB_URL, GEO_DB_OPTIONS, WEATHER_API_URL } from '../utils/constants.js';
 
 export class WeatherService {
-    async fetchWeatherApiData(city) {
+    async fetchWeatherApiData(searchCity) {
         try {
-            const { latitude, longitude } = await this.fetchCityCoordinates(city);
+            const { latitude, longitude, city } = await this.fetchCityCoordinates(searchCity);
             const response = await axios.get(`${WEATHER_API_URL}&lat=${latitude}&lon=${longitude}&units=metric`);
-            response.data.cityName = city.charAt(0).toUpperCase() + city.slice(1);
+            response.data.cityName = city;
 
             return response.data;
         } catch (error) {
@@ -21,7 +21,7 @@ export class WeatherService {
             if (!response.data || !response.data.data || response.data.data.length === 0) {
                 throw new Error('No data found');
             }
-    
+
             return response.data.data[0];
         } catch (error) {
             console.error(`Error in fetchCityCoordinates: ${error}`);
