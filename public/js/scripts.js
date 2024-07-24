@@ -47,24 +47,24 @@ const displayData = (data) => {
 
         const weatherIconDiv = document.createElement('div');
         weatherIconDiv.id = 'weather-icon';
-        weatherIconDiv.innerHTML = `<img src="/images/${data.weatherData.weather[0].icon}.png" alt="Weather icon">`;
+        weatherIconDiv.innerHTML = `<img src="/images/${data.weatherData.icon}.png" alt="Weather icon">`;
 
         const temperatureDiv = document.createElement('div');
         temperatureDiv.id = 'temperature';
-        temperatureDiv.textContent = `${data.weatherData.main.temp}°C`;
+        temperatureDiv.textContent = `${data.weatherData.temperature}°C`;
 
         const feelsLikeDiv = document.createElement('div');
         feelsLikeDiv.id = 'feels-like';
-        feelsLikeDiv.textContent = `Feels like: ${data.weatherData.main.feels_like}°C`;
+        feelsLikeDiv.textContent = `Feels like: ${data.weatherData.feelsLike}°C`;
 
         const weatherDescriptionDiv = document.createElement('div');
         weatherDescriptionDiv.id = 'weather-description';
-        const description = data.weatherData.weather[0].description;
-        weatherDescriptionDiv.textContent = description.charAt(0).toUpperCase() + description.slice(1);;
+        const description = data.weatherData.description;
+        weatherDescriptionDiv.textContent = description;
 
         const humidityDiv = document.createElement('div');
         humidityDiv.id = 'humidity';
-        humidityDiv.textContent = `Humidity: ${data.weatherData.main.humidity}%`;
+        humidityDiv.textContent = `Humidity: ${data.weatherData.humidity}%`;
 
         dataContainer.appendChild(cityNameDiv);
         dataContainer.appendChild(weatherIconDiv);
